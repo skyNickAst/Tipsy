@@ -46,7 +46,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" placeholder="e.g. 150.50" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGO-sO-W3J">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 150.50" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGO-sO-W3J">
                                 <rect key="frame" x="20" y="126.00000000000001" width="390" height="45.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -134,7 +134,6 @@
         <!--Result View Controller-->
         <scene sceneID="OQX-Vo-0dV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S1u-MV-oPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Grh-4S-yc1" customClass="ResultViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6G-iO-CBD">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
@@ -143,8 +142,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="sYt-O4-ONL">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result is here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-TM-rYS">
-                                <rect key="frame" x="109.66666666666669" y="310.66666666666669" width="211" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Total per person" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="1eW-8b-zBN">
+                                <rect key="frame" x="88.666666666666686" y="84" width="253" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 30% tip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="dfP-TM-rYS">
+                                <rect key="frame" x="20" y="389.66666666666669" width="390" height="83.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -159,24 +164,43 @@
                                 </state>
                                 <connections>
                                     <action selector="calcButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iBu-Hc-Xig"/>
+                                    <action selector="recalcButtonPressed:" destination="Grh-4S-yc1" eventType="touchUpInside" id="2NM-uT-l3X"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="2EQ-14-aPi">
+                                <rect key="frame" x="35" y="131" width="360" height="253.66666666666663"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="110"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gI3-xx-JKl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sYt-O4-ONL" firstAttribute="leading" secondItem="gI3-xx-JKl" secondAttribute="leading" id="3aw-cP-L4p"/>
+                            <constraint firstItem="dfP-TM-rYS" firstAttribute="leading" secondItem="K6G-iO-CBD" secondAttribute="leadingMargin" id="7hz-jM-WPi"/>
+                            <constraint firstItem="2EQ-14-aPi" firstAttribute="leading" secondItem="K6G-iO-CBD" secondAttribute="leadingMargin" constant="15" id="9yJ-RU-enI"/>
                             <constraint firstItem="RwP-dq-Jy4" firstAttribute="leading" secondItem="K6G-iO-CBD" secondAttribute="leadingMargin" constant="15" id="Dmd-nI-bb4"/>
                             <constraint firstAttribute="bottomMargin" secondItem="RwP-dq-Jy4" secondAttribute="bottom" constant="15" id="Dtz-gP-O5l"/>
-                            <constraint firstItem="dfP-TM-rYS" firstAttribute="centerY" secondItem="K6G-iO-CBD" secondAttribute="centerY" constant="-100" id="OEZ-dE-MAz"/>
-                            <constraint firstItem="dfP-TM-rYS" firstAttribute="centerX" secondItem="K6G-iO-CBD" secondAttribute="centerX" id="fS7-cG-Xsn"/>
+                            <constraint firstItem="dfP-TM-rYS" firstAttribute="centerY" secondItem="K6G-iO-CBD" secondAttribute="centerY" id="OEZ-dE-MAz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dfP-TM-rYS" secondAttribute="trailing" id="VGN-ki-BzT"/>
+                            <constraint firstItem="1eW-8b-zBN" firstAttribute="centerX" secondItem="K6G-iO-CBD" secondAttribute="centerX" id="Xji-ra-K9E"/>
                             <constraint firstAttribute="bottom" secondItem="sYt-O4-ONL" secondAttribute="bottom" id="h9z-R9-GSx"/>
                             <constraint firstItem="sYt-O4-ONL" firstAttribute="trailing" secondItem="gI3-xx-JKl" secondAttribute="trailing" id="mHn-My-7m3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RwP-dq-Jy4" secondAttribute="trailing" constant="15" id="or0-8I-AVV"/>
+                            <constraint firstItem="dfP-TM-rYS" firstAttribute="top" secondItem="2EQ-14-aPi" secondAttribute="bottom" constant="5" id="qkw-wz-oHz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2EQ-14-aPi" secondAttribute="trailing" constant="15" id="sPa-yX-aif"/>
+                            <constraint firstItem="1eW-8b-zBN" firstAttribute="top" secondItem="gI3-xx-JKl" secondAttribute="top" constant="25" id="vUP-CR-egp"/>
+                            <constraint firstItem="2EQ-14-aPi" firstAttribute="top" secondItem="1eW-8b-zBN" secondAttribute="bottom" constant="5" id="yH0-Dp-RM2"/>
                             <constraint firstItem="sYt-O4-ONL" firstAttribute="top" secondItem="K6G-iO-CBD" secondAttribute="top" id="zhI-IO-89T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="dfP-TM-rYS" id="ppn-wd-emx"/>
+                        <outlet property="willPayEach" destination="2EQ-14-aPi" id="RPc-Rv-oXC"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S1u-MV-oPO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838.60465116279067" y="-35.407725321888414"/>
         </scene>

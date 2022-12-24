@@ -61,11 +61,11 @@
 				9117368729578303003355F8 /* AppDelegate.swift */,
 				9117368929578303003355F8 /* SceneDelegate.swift */,
 				9117368B29578303003355F8 /* ViewController.swift */,
+				9117369D2957B860003355F8 /* ResultViewController.swift */,
 				9117368D29578303003355F8 /* Main.storyboard */,
 				9117369029578304003355F8 /* Assets.xcassets */,
 				9117369229578304003355F8 /* LaunchScreen.storyboard */,
 				9117369529578304003355F8 /* Info.plist */,
-				9117369D2957B860003355F8 /* ResultViewController.swift */,
 			);
 			path = Tipsy;
 			sourceTree = "<group>";

@@ -16,6 +16,7 @@ class ViewController: UIViewController{
     var bill = 0.0
     var tip = 0.1
     var persons = 1.0
+    var finalResult = ""
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         billTextFieldOutlet.endEditing(true)
@@ -38,12 +39,19 @@ class ViewController: UIViewController{
             billTextFieldOutlet.placeholder = "e.g. 150.50"
             bill = Double(billTextFieldOutlet.text!)!
             let result = ((bill * tip) + bill) / persons
-            print(Double(round(100 * result) / 100))
+            finalResult = String(format: "%.2f", result)
             performSegue(withIdentifier: "toResult", sender: self)
         } else {
             billTextFieldOutlet.placeholder = "Enter the amount of your bill..."
-            
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResult" {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.totalPerPerson = finalResult
+            destinationVC.tip = tipPercentageLabel.text!
+            destinationVC.persons = String(format: "%.0f", persons)
+        }
+    }
 }
